@@ -6,5 +6,21 @@ class SitesController < ApplicationController
   end
 
   def new
+    @site = Site.new
+  end
+
+  def create
+    @site = Site.new(site_params)
+    if @site.save
+      # successful submission of URL
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def site_params
+    params.require(:site).permit(:url)
   end
 end

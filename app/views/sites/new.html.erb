@@ -1,2 +1,14 @@
-<h1>Sites#new</h1>
-<p>Find me in app/views/sites/new.html.erb</p>
+<% provide(:title, "ShortenURL") %>
+<h1>Welcome to the ShortenURL App</h1>
+<p>
+  This is the main page for the
+  <a href="https://ajmalurl.herokuapp.com/">ShortenURL</a>
+  application.
+</p>
+
+<%= form_for(@site) do |f| %>
+  <%= f.label :website %>
+  <%= f.url_field :url %>
+
+  <%= f.submit "Shorten URL", class: "btn btn-primary" %>
+<% end %>
