@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
-  get  '/newlink',  to: 'users#new'
+  get 'sites/new'
 end
